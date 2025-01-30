@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   const apiUrl = 'https://api.veritree.com/api/orgs/pstats';
   const orgId = 478;
 
@@ -10,4 +10,4 @@ module.exports = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error fetching data from Veritree API' });
   }
-};
+}
