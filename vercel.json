@@ -1,5 +1,4 @@
 {
-    "runtime": "nodejs18.x",
     "functions": {
       "api/stats.js": {
         "runtime": "nodejs18.x"
