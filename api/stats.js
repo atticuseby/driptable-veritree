@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     const response = await axios.get(`${apiUrl}?org_id=${orgId}&org_type=sponsorAccount&_v=11.0.0`);
     res.status(200).json(response.data);
   } catch (error) {
-    res.status(500).json({ error: 'Error fetching data from Veritree API' });
+    console.error("Error fetching Veritree data:", error);
+    res.status(500).json({ error: error.message || "Unknown server error" });
   }
 }
